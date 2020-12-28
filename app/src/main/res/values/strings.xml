@@ -8,4 +8,8 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="fullname">Fullname</string>
+    <string name="beranda">Beranda</string>
+    <string name="berita">Berita</string>
+    <string name="favorit">Favorit</string>
+    <string name="profil">Profil</string>
 </resources>
