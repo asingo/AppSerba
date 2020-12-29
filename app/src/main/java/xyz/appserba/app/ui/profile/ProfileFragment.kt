@@ -19,24 +19,21 @@ import xyz.appserba.app.ui.home.MainActivity
 
 class ProfileFragment : Fragment() {
     lateinit var binding: FragmentProfileBinding
-
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
-
-    private lateinit var viewModel: ProfileViewModel
-
+    lateinit var viewModel: ProfileViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-        val context: Context
+        binding = activity?.let { DataBindingUtil.setContentView(it, R.layout.fragment_profile) }!!
         binding.btnLogout.setOnClickListener {
-            AppserbaAuth.logout(context) {
-                startActivity(Intent(context, AuthActivity::class.java))
+            AppserbaAuth.logout(requireActivity()) {
+                activity?.let {
+                    val intent = Intent(it, AuthActivity::class.java)
+                    startActivity(intent)
+                }
             }
         }
+        return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

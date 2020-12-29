@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="xyz.appserba.app.data.model.News" />
+            type="xyz.appserba.app.data.model.Attributes" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

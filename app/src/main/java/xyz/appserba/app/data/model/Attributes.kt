@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class News(
+data class Attributes(
     val FID: Int = 0,
     val Kode_Provi: Int = 0,
     val Provinsi: String = "",
